@@ -1,7 +1,9 @@
+import { NavLink } from 'react-router';
+
 const Footer = () => {
   return (
     <>
-      <footer className='xs:hidden md:visible footer sm:footer-horizontal footer-center bg-base-300 text-base-content p-4 fixed bottom-0 left-0 right-0'>
+      <footer className='xs:hidden md:visible footer sm:footer-horizontal footer-center bg-base-300 text-base-content p-4'>
         <aside>
           <p>
             Copyright © {new Date().getFullYear()} - All right reserved by ACME
@@ -10,7 +12,7 @@ const Footer = () => {
         </aside>
       </footer>
       <div className='dock xs:visible md:hidden fixed bottom-0 left-0 right-0 flex justify-center gap-4 p-2 bg-base-200 text-base-content'>
-        <button>
+        <NavLink to='/' className={({isActive}) => (isActive ? 'dock-active' : '')}>
           <svg
             className='size-[1.2em]'
             xmlns='http://www.w3.org/2000/svg'
@@ -46,13 +48,13 @@ const Footer = () => {
             </g>
           </svg>
           <span className='dock-label'>Home</span>
-        </button>
+        </NavLink>
 
-        <button className='dock-active'>
+        <NavLink to='/products' className={({isActive}) => (isActive ? 'dock-active' : '')}>
           <svg
             className='size-[1.2em]'
             xmlns='http://www.w3.org/2000/svg'
-            viewBox='0 0 24 24'
+            viewBox='0 0 24 24' 
           >
             <g fill='currentColor' strokeLinejoin='miter' strokeLinecap='butt'>
               <polyline
@@ -78,9 +80,9 @@ const Footer = () => {
             </g>
           </svg>
           <span className='dock-label'>Products</span>
-        </button>
+        </NavLink>
 
-        <button>
+        <NavLink to='/settings' className={({isActive}) => (isActive ? 'dock-active' : '')}>
           <svg
             className='size-[1.2em]'
             xmlns='http://www.w3.org/2000/svg'
@@ -108,7 +110,7 @@ const Footer = () => {
             </g>
           </svg>
           <span className='dock-label'>Settings</span>
-        </button>
+        </NavLink>
       </div>
     </>
   );

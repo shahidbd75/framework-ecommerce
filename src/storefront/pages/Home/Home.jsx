@@ -1,3 +1,5 @@
+import TrendingProduct from '../../components/TrendingProduct/TrendingProduct';
+
 const Home = () => {
   return (
     <div>
@@ -21,6 +23,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <TrendingProduct />
     </div>
   );
 };
